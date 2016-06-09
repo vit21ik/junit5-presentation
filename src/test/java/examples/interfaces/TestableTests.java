@@ -1,10 +1,11 @@
 package examples.interfaces;
 
+
 import org.junit.gen5.api.Test;
 
 import static org.junit.gen5.api.Assertions.assertEquals;
 
-public interface TestablesTests<T> extends Testable<T> {
+public interface TestableTests<T> extends Testable<T> {
 
   @Test
   default void valueEqualsHelloWorld() {

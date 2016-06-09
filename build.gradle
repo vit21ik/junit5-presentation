@@ -22,7 +22,7 @@ junit5 {
     excludeTag 'slow'
 }
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 version = '1.0'
 
 repositories {
