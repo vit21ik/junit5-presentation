@@ -9,14 +9,15 @@ import org.junit.gen5.api.extension.TestInstancePostProcessor;
 import java.lang.reflect.Parameter;
 import java.util.Optional;
 
-public class UserExtention implements TestInstancePostProcessor, ParameterResolver {
+public abstract class UserExtention implements TestInstancePostProcessor, ParameterResolver {
 
-  @Override
+
+
   public boolean supports(Parameter parameter, Optional<Object> target, ExtensionContext extensionContext) throws ParameterResolutionException {
     return parameter.isAnnotationPresent(InjectUser.class);
   }
 
-  @Override
+
   public Object resolve(Parameter parameter, Optional<Object> target, ExtensionContext extensionContext) throws ParameterResolutionException {
     return new User();
   }
@@ -25,5 +26,4 @@ public class UserExtention implements TestInstancePostProcessor, ParameterResolv
   public void postProcessTestInstance(Object testInstance, ExtensionContext context) throws Exception {
 
   }
-
 }
